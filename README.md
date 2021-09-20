@@ -1,4 +1,27 @@
 # Welcome to Matchmaker 👋
+Data: https://microsoft.github.io/msmarco/TREC-Deep-Learning-2019.html (check passage ranking dataset section) or https://microsoft.github.io/msmarco/TREC-Deep-Learning-2020.html
+
+I am using https://microsoft.github.io/msmarco/TREC-Deep-Learning-2020.html 
+
+
+create 4 folders: 
+
+./qrels -> download qrels.dev.tsv and put it inside this folder
+
+./test -> download msmarco-passagetest2020-top1000.tsv
+
+./train -> download triples.train.small.tar.gz
+
+./validation -> download msmarco-passagetest2019-top1000.tsv
+
+Download glove42B data from https://www.kaggle.com/yutanakamura/glove42b300dtxt/code, rename the downloaded txt file as glove42B.txt and put it under the main directory ./
+
+
+
+
+
+
+
 
 Matchmaker is a research library for rapid training, evaluation, and analysis of text-based neural re-ranking and retrieval models built with PyTorch. Initially created to support Transformer-Kernel research, now evolved to a general library, with broad support for knowledge distillation. 
 
