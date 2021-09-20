@@ -1,0 +1,2 @@
+2021-09-20 13:22:32,297 INFO Running: ['matchmaker/train.py', '--config-file', 'config/train/defaults.yaml', 'config/train/data/example-minimal-dataset.yaml', 'config/train/models/tkl.yaml', '--run-name', 'tkl_default']
+2021-09-20 13:22:32,316 INFO Torch seed: 208973249 

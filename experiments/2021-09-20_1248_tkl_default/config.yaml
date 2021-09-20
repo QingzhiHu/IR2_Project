@@ -1,0 +1,108 @@
+batch_size_eval: 512
+batch_size_train: 32
+bert_pretrained_model: distilbert-base-uncased
+bert_trainable: true
+dataloader_num_workers: 6
+dynamic_sampler: false
+dynamic_teacher: false
+dynamic_teacher_in_batch_scoring: false
+dynamic_teacher_path: None
+dynamic_teacher_per_term_scores: false
+early_stopping_patience: 30
+embedding_optimizer: sparse_adam
+embedding_optimizer_learning_rate: 7.0e-06
+embedding_optimizer_momentum: 0.8
+epochs: 25
+expirement_base_path: ./experiments
+gradient_accumulation_steps: -1
+in_batch_main_pair_lambda: 1
+in_batch_neg_lambda: 0.2
+in_batch_neg_loss: lambdarank
+in_batch_negatives: false
+learning_rate_scheduler_factor: 0.25
+learning_rate_scheduler_patience: 15
+loss: ranknet
+max_doc_length: 2000
+max_query_length: 30
+min_doc_length: -1
+min_query_length: -1
+min_steps_training: 300000
+minimize_sparsity: false
+model: TKL
+model_input_type: independent
+optimizer: adam
+param_group0_learning_rate: 1.0e-05
+param_group0_weight_decay: 0
+param_group1_learning_rate: 0.0001
+param_group1_names:
+- kernel_bin_weights
+- kernel_alpha_scaler
+param_group1_weight_decay: 0
+pre_trained_embedding: ./glove42B.txt
+pre_trained_embedding_dim: 300
+qa_loss: StartEndCrossEntropy
+qa_loss_lambda: 0.2
+query_augment_mask_number: -1
+random_seed: 208973249
+run_dense_retrieval_eval: false
+secondary_output:
+  top_n: 100
+sparse_gradient_embedding: true
+store_n_best_checkpoints: 1
+tas_balanced_pair_strategy: random
+test:
+  top1000orSomeOtherName:
+    binarization_point: 1
+    qrels: ./qrels/qrels.dev.tsv
+    save_secondary_output: true
+    tsv: ./test/msmarco-passagetest2020-top1000.tsv
+tk_att_ff_dim: 300
+tk_att_heads: 10
+tk_att_layer: 2
+tk_kernels_mu:
+- 1.0
+- 0.9
+- 0.7
+- 0.5
+- 0.3
+- 0.1
+- -0.1
+- -0.3
+- -0.5
+- -0.7
+- -0.9
+tk_kernels_sigma:
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+tk_mix_hybrid_context: true
+tk_saturation_type: embedding
+tk_use_diff_posencoding: true
+tk_use_pos_encoding: true
+token_embedder_type: embedding
+train_data_augment: none
+train_embedding: true
+train_pairwise_distillation: false
+train_pairwise_distillation_on_passages: false
+train_qa_spans: false
+train_tsv: ./train/triples.train.tsv
+use_cls_scoring: false
+use_fp16: false
+use_title_body_sep: false
+validate_every_n_batches: 4000
+validation_cont:
+  binarization_point: 1
+  qrels: ./qrels/qrels.dev.tsv
+  save_only_best: true
+  tsv: ./validation/msmarco-passagetest2019-top1000.tsv
+validation_cont_use_cache: true
+validation_metric: nDCG@10
+vocab_directory: ./config/vocabs/allen_vocab_lower_glove42
