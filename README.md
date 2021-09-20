@@ -17,7 +17,9 @@ create 4 folders:
 Download glove42B data from https://www.kaggle.com/yutanakamura/glove42b300dtxt/code, rename the downloaded txt file as glove42B.txt and put it under the main directory ./
 
 
+For training, use the following command:
 
+python matchmaker/train.py --config-file config/train/defaults.yaml config/train/data/example-minimal-dataset.yaml config/train/models/tkl.yaml --run-name tkl_default
 
 
 
