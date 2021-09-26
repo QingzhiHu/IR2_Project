@@ -19,7 +19,11 @@ sparse_gradient_embedding: False
 # we use pytorch's built in mixed-precision training
 # false for fp32 training
 use_fp16: True
+use_title_body_sep: False
+use_cls_scoring: False
+minimize_sparsity: False
 
+train_qa_spans: False
 random_seed: 208973249
 train_data_augment: "none"
 store_n_best_checkpoints: 1
