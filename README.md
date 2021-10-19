@@ -1,29 +1,29 @@
 # Welcome to Matchmaker 👋
 Data: https://microsoft.github.io/msmarco/TREC-Deep-Learning-2019.html (check passage ranking dataset section) or https://microsoft.github.io/msmarco/TREC-Deep-Learning-2020.html
 
-I am using https://microsoft.github.io/msmarco/TREC-Deep-Learning-2020.html 
+I am using https://microsoft.github.io/msmarco/TREC-Deep-Learning-2020.html and https://github.com/microsoft/MSMARCO-Passage-Ranking
 
 
 create 4 folders: 
 
-./training_data/qrels -> download qrels.dev.tsv and put it inside this folder
+./qrels -> download qrels.dev.tsv and put it inside this folder
 
-./training_data/test -> download top1000dev.tsv and put it inside this folder
+./test -> download top1000dev.tsv and put it inside this folder
 
-./training_data/train -> download triples.train.small.tar.gz
+./train -> download triples.train.small.tar.gz
 
-./training_data/validation -> download top1000eval.tsv and put it inside this folder
+./validation -> download top1000eval.tsv and put it inside this folder
 
-Download glove42B data from https://www.kaggle.com/yutanakamura/glove42b300dtxt/code, rename the downloaded txt file as glove42B.txt and put it under the main directory ./training_data/
-
+Download glove42B data from https://www.kaggle.com/yutanakamura/glove42b300dtxt/code, rename the downloaded txt file as glove42B.txt and put it under the main directory ./
+you may replace it by Glove.6B.100d.txt and add a new corresponding data configuration file in ./config/train/data/
 
 For training, use the following command:
 
 ```
-python matchmaker/train.py --config-file config/train/defaults.yaml config/train/data/msmarco.yaml config/train/models/tk.yaml --run-name tk_default
+python matchmaker/train.py --config-file config/train/defaults.yaml config/train/data/example-minimal-dataset.yaml config/train/models/tkl.yaml --run-name tk_default
 ```
 
-
+For potential problems regarding the version conflicts, please replace Automodel by TFAutomodel.
 
 
 Matchmaker is a research library for rapid training, evaluation, and analysis of text-based neural re-ranking and retrieval models built with PyTorch. Initially created to support Transformer-Kernel research, now evolved to a general library, with broad support for knowledge distillation. 

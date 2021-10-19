@@ -81,19 +81,36 @@ def allennlp_triple_training_loader(model_config, run_config, _input_file):
             reader = ConcatenatedTrainingDatasetReader(tokenizer=_tokenizer, token_indexers=_token_indexers,
                                              max_doc_length=run_config["max_doc_length"], max_query_length=run_config["max_query_length"],
                                              min_doc_length=run_config["min_doc_length"], min_query_length=run_config["min_query_length"],
-                                             data_augment=run_config["train_data_augment"], train_pairwise_distillation=False, train_qa_spans=False)
+                                             data_augment=run_config["train_data_augment"], train_pairwise_distillation=run_config["train_pairwise_distillation"], train_qa_spans=run_config["train_qa_spans"])
         else:
             reader = IndependentTrainingDatasetReader(tokenizer=_tokenizer, token_indexers=_token_indexers,
                                            max_doc_length=run_config["max_doc_length"], max_query_length=run_config["max_query_length"],
                                            min_doc_length=run_config["min_doc_length"], min_query_length=run_config["min_query_length"],
-                                           data_augment=run_config["train_data_augment"], train_pairwise_distillation=False,
-                                           query_augment_mask_number=run_config["query_augment_mask_number"], train_qa_spans=False)
+                                           data_augment=run_config["train_data_augment"], train_pairwise_distillation=run_config["train_pairwise_distillation"],
+                                           query_augment_mask_number=run_config["query_augment_mask_number"], train_qa_spans=run_config["train_qa_spans"])
 
         loader = MultiProcessDataLoader(reader, data_path=_input_file, num_workers=run_config["dataloader_num_workers"],
                                         max_instances_in_memory=int(run_config["batch_size_train"])*25, quiet=True, start_method="fork" if "fork" in mp.get_all_start_methods() else "spawn",
                                         batch_size=run_config["batch_size_train"])
         loader.index_with(_vocab)
 
+    else:
+        #if run_config["dynamic_sampler_type"] == "list":
+        #    loader = IrDynamicTripleDatasetLoader(query_file=run_config["dynamic_query_file"], collection_file=run_config["dynamic_collection_file"],
+        #                                          qrels_file=run_config["dynamic_qrels_file"], candidate_file=run_config["dynamic_candidate_file"],
+        #                                          batch_size=int(run_config["batch_size_train"]), queries_per_batch=run_config["dynamic_queries_per_batch"], tokenizer=_tokenizer, token_indexers=_token_indexers,
+        #                                          max_doc_length=run_config["max_doc_length"], max_query_length=run_config["max_query_length"],
+        #                                          min_doc_length=run_config["min_doc_length"], min_query_length=run_config["min_query_length"],
+        #                                          data_augment=run_config["train_data_augment"], vocab=_vocab)
+
+        if run_config["dynamic_sampler_type"] == "tas_balanced":
+            loader = TASBalancedDatasetLoader(query_file=run_config["dynamic_query_file"], collection_file=run_config["dynamic_collection_file"],
+                                              pairs_with_teacher_scores=run_config["dynamic_pairs_with_teacher_scores"], query_cluster_file=run_config["dynamic_query_cluster_file"],
+                                              batch_size=int(run_config["batch_size_train"]), clusters_per_batch=run_config["dynamic_clusters_per_batch"], tokenizer=_tokenizer,
+                                              max_doc_length=run_config["max_doc_length"], max_query_length=run_config["max_query_length"],
+                                              pair_balancing_strategy=run_config["tas_balanced_pair_strategy"],random_seed =run_config["random_seed"])
+        else:
+            raise ConfigurationError("dynamic sampler type not supported")
 
     return loader
 

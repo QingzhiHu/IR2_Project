@@ -1,0 +1,14 @@
+# token_embedder_type: "embedding"
+model: "conv_knrm"
+# knrm_kernels: 11
+# sparse_gradient_embedding: True
+# embedding_optimizer: sparse_adam
+# use_fp16: False
+#
+# param_group0_learning_rate: 0.00001
+# param_group1_names: ["kernel_bin_weights","kernel_alpha_scaler"]
+# param_group1_learning_rate: 0.0001
+
+conv_knrm_ngrams: 3
+conv_knrm_kernels: 11
+conv_knrm_conv_out_dim: 128 # F in the paper
