@@ -66,11 +66,11 @@ In ./config/train/data_config and ./config/train/models_config you can change th
 
 ## Hypaparameters
 
-![image info](./documentation/dataset.PNG)
+![image info](./documentation/Hyperparameters.PNG)
 
 ## Datasets
 
-![image info](./documentation/Hyperparameters.PNG)
+![image info](./documentation/dataset.PNG)
 
 # Data Preprocessing
 
