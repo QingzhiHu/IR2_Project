@@ -1,14 +1,12 @@
 # Reproducing TK paper
 
-This repository is made for reproducing the results of the paper *Interpretable & Time-Budget-Constrained Contextualization for Re-Ranking* for the master course Information Retrieval 2 at University of Amsterdam. 
+This repository is made for reproducing the results of the paper *Interpretable & Time-Budget-Constrained Contextualization for Re-Ranking* for the master course Information Retrieval 2 at University of Amsterdam.
 
 The report is concluded in this repository: ./report.pdf
 
 For summary of all the reproducible and research results, you can read this slide we used for our presentation: https://docs.google.com/presentation/d/1_i1f7TyuUlFKn8QZmraijOlJtVF9VLWOXjyq9a4n_qY/edit?usp=sharing
 
-Note due to the large files not convenient to be handled by github, we have removed all pretrained models on the github repo. In case of any potential problem, we provide a link to download the entire repository with everything included: 
-
-
+Note due to the large files not convenient to be handled by github, we have removed all pretrained models, pre-trained glove embeddings, best-validation-outputs and the content inside of data folder on the github repo. In case of any potential problem, we provide a link to download the entire repository with everything included:
 
 The models of our interest only include KNRM, CONV-KNRM, TK (layer 1,2,3) and BERT. If readers want to reproduce other models, please create a new yaml file inside of ./config/train/models_config.
 
