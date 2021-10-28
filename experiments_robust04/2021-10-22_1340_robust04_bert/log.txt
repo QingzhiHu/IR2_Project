@@ -1,0 +1,164 @@
+2021-10-22 13:40:36,290 INFO Running: ['.\\matchmaker\\train.py', '--run-name', 'robust04_bert', '--config-file', '.\\config\\train\\defaults_bert.yaml', '.\\config\\train\\robust04.yaml']
+2021-10-22 13:40:36,305 INFO Torch seed: 208973249 
+2021-10-22 13:40:47,085 INFO Model bert_cat total parameters: 66363649
+2021-10-22 13:40:47,085 INFO Network: BERT_Cat(
+  (bert_model): DistilBertModel(
+    (embeddings): Embeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (transformer): Transformer(
+      (layer): ModuleList(
+        (0): TransformerBlock(
+          (attention): MultiHeadSelfAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (q_lin): Linear(in_features=768, out_features=768, bias=True)
+            (k_lin): Linear(in_features=768, out_features=768, bias=True)
+            (v_lin): Linear(in_features=768, out_features=768, bias=True)
+            (out_lin): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (sa_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (ffn): FFN(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (lin1): Linear(in_features=768, out_features=3072, bias=True)
+            (lin2): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (output_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+        (1): TransformerBlock(
+          (attention): MultiHeadSelfAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (q_lin): Linear(in_features=768, out_features=768, bias=True)
+            (k_lin): Linear(in_features=768, out_features=768, bias=True)
+            (v_lin): Linear(in_features=768, out_features=768, bias=True)
+            (out_lin): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (sa_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (ffn): FFN(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (lin1): Linear(in_features=768, out_features=3072, bias=True)
+            (lin2): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (output_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+        (2): TransformerBlock(
+          (attention): MultiHeadSelfAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (q_lin): Linear(in_features=768, out_features=768, bias=True)
+            (k_lin): Linear(in_features=768, out_features=768, bias=True)
+            (v_lin): Linear(in_features=768, out_features=768, bias=True)
+            (out_lin): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (sa_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (ffn): FFN(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (lin1): Linear(in_features=768, out_features=3072, bias=True)
+            (lin2): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (output_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+        (3): TransformerBlock(
+          (attention): MultiHeadSelfAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (q_lin): Linear(in_features=768, out_features=768, bias=True)
+            (k_lin): Linear(in_features=768, out_features=768, bias=True)
+            (v_lin): Linear(in_features=768, out_features=768, bias=True)
+            (out_lin): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (sa_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (ffn): FFN(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (lin1): Linear(in_features=768, out_features=3072, bias=True)
+            (lin2): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (output_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+        (4): TransformerBlock(
+          (attention): MultiHeadSelfAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (q_lin): Linear(in_features=768, out_features=768, bias=True)
+            (k_lin): Linear(in_features=768, out_features=768, bias=True)
+            (v_lin): Linear(in_features=768, out_features=768, bias=True)
+            (out_lin): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (sa_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (ffn): FFN(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (lin1): Linear(in_features=768, out_features=3072, bias=True)
+            (lin2): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (output_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+        (5): TransformerBlock(
+          (attention): MultiHeadSelfAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (q_lin): Linear(in_features=768, out_features=768, bias=True)
+            (k_lin): Linear(in_features=768, out_features=768, bias=True)
+            (v_lin): Linear(in_features=768, out_features=768, bias=True)
+            (out_lin): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (sa_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (ffn): FFN(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (lin1): Linear(in_features=768, out_features=3072, bias=True)
+            (lin2): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (output_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+      )
+    )
+  )
+  (_classification_layer): Linear(in_features=768, out_features=1, bias=True)
+)
+2021-10-22 13:40:49,842 INFO [Epoch 0] --- Start training 
+2021-10-22 13:49:22,598 INFO [eval_model] --- Start validation from loader
+2021-10-22 14:04:53,951 INFO 4000Saved new best weights with: nDCG@10: 0.1435085870985922
+2021-10-22 14:04:53,951 INFO 4000-BERT_cat: / 
+2021-10-22 14:12:34,874 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 14:19:25,230 INFO 8000Saved new best weights with: nDCG@10: 0.19278653365729992
+2021-10-22 14:19:25,230 INFO 8000-BERT_cat: / 
+2021-10-22 14:27:35,281 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 14:34:29,979 INFO 12000-BERT_cat: / 
+2021-10-22 14:42:11,923 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 14:49:05,543 INFO 16000Saved new best weights with: nDCG@10: 0.21876330509677355
+2021-10-22 14:49:05,543 INFO 16000-BERT_cat: / 
+2021-10-22 14:56:50,175 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 15:03:32,686 INFO 20000-BERT_cat: / 
+2021-10-22 15:11:23,110 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 15:18:15,812 INFO 24000Saved new best weights with: nDCG@10: 0.23143228106302308
+2021-10-22 15:18:15,812 INFO 24000-BERT_cat: / 
+2021-10-22 15:25:55,197 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 15:32:47,600 INFO 28000-BERT_cat: / 
+2021-10-22 15:40:41,410 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 15:47:28,357 INFO 32000Saved new best weights with: nDCG@10: 0.23641009741997918
+2021-10-22 15:47:28,357 INFO 32000-BERT_cat: / 
+2021-10-22 15:55:20,034 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 16:02:00,575 INFO 36000-BERT_cat: / 
+2021-10-22 16:09:43,989 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 16:16:31,232 INFO 40000Saved new best weights with: nDCG@10: 0.23880921747192901
+2021-10-22 16:16:31,232 INFO 40000-BERT_cat: / 
+2021-10-22 16:24:16,231 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 16:31:01,221 INFO 44000Saved new best weights with: nDCG@10: 0.26029215492556146
+2021-10-22 16:31:01,221 INFO 44000-BERT_cat: / 
+2021-10-22 16:38:44,704 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 16:45:26,539 INFO 48000-BERT_cat: / 
+2021-10-22 16:53:07,672 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 16:59:46,055 INFO 52000-BERT_cat: / 
+2021-10-22 17:07:24,267 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 17:14:02,698 INFO 56000-BERT_cat: / 
+2021-10-22 17:21:37,790 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 17:28:16,230 INFO 60000-BERT_cat: / 
+2021-10-22 17:35:56,145 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 17:42:34,558 INFO 64000-BERT_cat: / 
+2021-10-22 17:50:11,006 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 17:56:51,235 INFO 68000-BERT_cat: / 
+2021-10-22 18:04:34,029 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 18:11:13,749 INFO 72000Saved new best weights with: nDCG@10: 0.2665581706212245
+2021-10-22 18:11:13,749 INFO 72000-BERT_cat: / 
+2021-10-22 18:18:56,394 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 18:25:47,367 INFO 76000Saved new best weights with: nDCG@10: 0.2696010569671372
+2021-10-22 18:25:47,367 INFO 76000-BERT_cat: / 
+2021-10-22 18:33:35,154 INFO [eval_model] --- Start validation with cache size:678
+2021-10-22 18:40:26,222 INFO 80000-BERT_cat: / 

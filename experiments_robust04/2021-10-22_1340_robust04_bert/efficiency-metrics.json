@@ -1,0 +1,69 @@
+{
+  "gpu_model": "NVIDIA GeForce RTX 3070",
+  "gpu_count": 1,
+  "startup": {
+    "type": "single_point",
+    "time": 10.783553199999998
+  },
+  "train": {
+    "len": 2,
+    "measure": "seconds",
+    "sum_times_gpus": 969.4704848000001,
+    "sum_gpu_hours": 0.26929735688888895,
+    "sum": 969.4704848000001,
+    "type": "list_iterations",
+    "mean_perit": 132.3512319834319,
+    "stdev_perit": 9.209192149076081,
+    "median_perit": 132.3512319834319,
+    "median_latency": 484.73524240000006,
+    "95th_latency": 506.19998346999995,
+    "observations": 2
+  },
+  "validation": {
+    "len": 2,
+    "measure": "seconds",
+    "sum_times_gpus": 1344.9219778000001,
+    "sum_gpu_hours": 0.3735894382777778,
+    "sum": 1344.9219778000001,
+    "type": "list_iterations",
+    "mean_perit": 547.442574754994,
+    "stdev_perit": 303.90181841560997,
+    "median_perit": 547.442574754994,
+    "median_latency": 672.4609889000001,
+    "95th_latency": 910.0297515200001,
+    "observations": 2
+  },
+  "train_gpu_mem": {
+    "sum": 1.077851648,
+    "measure": "GB"
+  },
+  "train_gpu_mem_max": {
+    "sum": 4.111900672,
+    "measure": "GB"
+  },
+  "train_gpu_cache": {
+    "sum": 4.333764608,
+    "measure": "GB"
+  },
+  "train_gpu_cache_max": {
+    "sum": 4.333764608,
+    "measure": "GB"
+  },
+  "eval_gpu_mem": {
+    "sum": 1.077851648,
+    "measure": "GB"
+  },
+  "eval_gpu_mem_max": {
+    "sum": 5.256686591999999,
+    "measure": "GB"
+  },
+  "eval_gpu_cache": {
+    "sum": 6.803161088,
+    "measure": "GB"
+  },
+  "eval_gpu_cache_max": {
+    "sum": 6.803161088,
+    "measure": "GB"
+  },
+  "total_gpu_hours": 0.6428867951666668
+}

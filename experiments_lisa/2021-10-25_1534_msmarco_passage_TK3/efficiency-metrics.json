@@ -1,0 +1,69 @@
+{
+  "gpu_model": "GeForce GTX 1080 Ti",
+  "gpu_count": 1,
+  "startup": {
+    "type": "single_point",
+    "time": 281.8253039671108
+  },
+  "train": {
+    "len": 2,
+    "measure": "seconds",
+    "sum_times_gpus": 490.3408884429373,
+    "sum_gpu_hours": 0.13620580234526036,
+    "sum": 490.3408884429373,
+    "type": "list_iterations",
+    "mean_perit": 522.1521569505675,
+    "stdev_perit": 8.32639351079178,
+    "median_perit": 522.1521569505675,
+    "median_latency": 245.17044422146864,
+    "95th_latency": 247.65847346875816,
+    "observations": 2
+  },
+  "validation": {
+    "len": 2,
+    "measure": "seconds",
+    "sum_times_gpus": 2502.108566985,
+    "sum_gpu_hours": 0.6950301574958334,
+    "sum": 2502.108566985,
+    "type": "list_iterations",
+    "mean_perit": 5905.317200957774,
+    "stdev_perit": 2605.160008205299,
+    "median_perit": 5905.317200957774,
+    "median_latency": 1251.0542834925,
+    "95th_latency": 1602.286899252422,
+    "observations": 2
+  },
+  "train_gpu_mem": {
+    "sum": 6.925628928,
+    "measure": "GB"
+  },
+  "train_gpu_mem_max": {
+    "sum": 8.161892351999999,
+    "measure": "GB"
+  },
+  "train_gpu_cache": {
+    "sum": 9.94050048,
+    "measure": "GB"
+  },
+  "train_gpu_cache_max": {
+    "sum": 9.94050048,
+    "measure": "GB"
+  },
+  "eval_gpu_mem": {
+    "sum": 6.925628928,
+    "measure": "GB"
+  },
+  "eval_gpu_mem_max": {
+    "sum": 9.462156799999999,
+    "measure": "GB"
+  },
+  "eval_gpu_cache": {
+    "sum": 10.219421696,
+    "measure": "GB"
+  },
+  "eval_gpu_cache_max": {
+    "sum": 10.859053056,
+    "measure": "GB"
+  },
+  "total_gpu_hours": 0.8312359598410938
+}

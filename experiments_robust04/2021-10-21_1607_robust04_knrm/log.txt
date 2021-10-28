@@ -1,0 +1,59 @@
+2021-10-21 16:07:42,178 INFO Running: ['.\\matchmaker\\train.py', '--run-name', 'robust04_knrm', '--config-file', '.\\config\\train\\defaults_knrm.yaml', '.\\config\\train\\robust04.yaml']
+2021-10-21 16:07:42,205 INFO Torch seed: 208973249 
+2021-10-21 16:07:56,514 INFO Model knrm total parameters: 191749911
+2021-10-21 16:07:56,514 INFO Network: NeuralIR_Encoder(
+  (word_embeddings): BasicTextFieldEmbedder(
+    (token_embedder_tokens): Embedding()
+  )
+  (neural_ir_model): KNRM(
+    (cosine_module): CosineMatrixAttention()
+    (dense): Linear(in_features=11, out_features=1, bias=False)
+  )
+)
+2021-10-21 16:07:57,981 INFO [Epoch 0] --- Start training 
+2021-10-21 16:14:22,639 INFO [eval_model] --- Start validation from loader
+2021-10-21 16:19:13,003 INFO 4000Saved new best weights with: nDCG@10: 0.2957385334545155
+2021-10-21 16:19:13,005 INFO 4000-KNRM: linear weight: tensor([[ 0.3537,  0.3704,  0.3375,  0.1786,  0.0540, -0.0175,  0.0297,  0.0336,
+          0.0438,  0.0487,  0.0495]], device='cuda:0')
+2021-10-21 16:24:47,821 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 16:24:56,132 INFO 8000Saved new best weights with: nDCG@10: 0.313591888797504
+2021-10-21 16:24:56,134 INFO 8000-KNRM: linear weight: tensor([[ 0.7172,  0.7518,  0.6825,  0.3643,  0.0941, -0.0430,  0.0364,  0.0467,
+          0.0576,  0.0593,  0.0694]], device='cuda:0')
+2021-10-21 16:30:23,709 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 16:30:32,013 INFO 12000Saved new best weights with: nDCG@10: 0.32344414605061633
+2021-10-21 16:30:32,015 INFO 12000-KNRM: linear weight: tensor([[ 1.0731,  1.1273,  1.0149,  0.4974,  0.0582, -0.1308, -0.0016,  0.0301,
+          0.0491,  0.0542,  0.0832]], device='cuda:0')
+2021-10-21 16:35:59,745 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 16:36:08,053 INFO 16000Saved new best weights with: nDCG@10: 0.3238640577262739
+2021-10-21 16:36:08,056 INFO 16000-KNRM: linear weight: tensor([[ 1.4199,  1.5065,  1.3594,  0.6381,  0.0207, -0.2080, -0.0232,  0.0358,
+          0.0659,  0.0781,  0.1114]], device='cuda:0')
+2021-10-21 16:41:35,688 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 16:41:44,045 INFO 20000Saved new best weights with: nDCG@10: 0.326401853125475
+2021-10-21 16:41:44,047 INFO 20000-KNRM: linear weight: tensor([[ 1.7607,  1.8826,  1.6975,  0.7417, -0.0593, -0.3316, -0.0960, -0.0038,
+          0.0402,  0.0670,  0.1267]], device='cuda:0')
+2021-10-21 16:47:11,593 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 16:47:19,943 INFO 24000Saved new best weights with: nDCG@10: 0.3292634343097198
+2021-10-21 16:47:19,945 INFO 24000-KNRM: linear weight: tensor([[ 2.0816,  2.2527,  2.0149,  0.7863, -0.1867, -0.4838, -0.1688, -0.0385,
+          0.0196,  0.0637,  0.1503]], device='cuda:0')
+2021-10-21 16:52:47,598 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 16:52:53,057 INFO 28000-KNRM: linear weight: tensor([[ 2.3833,  2.6253,  2.3412,  0.8472, -0.2973, -0.6281, -0.2333, -0.0615,
+          0.0086,  0.0612,  0.1655]], device='cuda:0')
+2021-10-21 16:58:20,421 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 16:58:25,899 INFO 32000-KNRM: linear weight: tensor([[ 2.6351,  2.9907,  2.6433,  0.8484, -0.4548, -0.8082, -0.3290, -0.1029,
+         -0.0135,  0.0606,  0.1870]], device='cuda:0')
+2021-10-21 17:03:54,826 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 17:04:03,210 INFO 36000Saved new best weights with: nDCG@10: 0.330729847760876
+2021-10-21 17:04:03,212 INFO 36000-KNRM: linear weight: tensor([[ 2.8531,  3.3592,  2.9564,  0.8543, -0.6020, -0.9804, -0.4128, -0.1244,
+         -0.0120,  0.0829,  0.2341]], device='cuda:0')
+2021-10-21 17:09:31,302 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 17:09:39,726 INFO 40000Saved new best weights with: nDCG@10: 0.3309712660667702
+2021-10-21 17:09:39,728 INFO 40000-KNRM: linear weight: tensor([[ 3.0339,  3.7219,  3.2497,  0.8395, -0.7658, -1.1694, -0.5144, -0.1696,
+         -0.0374,  0.0761,  0.2654]], device='cuda:0')
+2021-10-21 17:15:06,700 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 17:15:15,133 INFO 44000Saved new best weights with: nDCG@10: 0.3323883674075524
+2021-10-21 17:15:15,135 INFO 44000-KNRM: linear weight: tensor([[ 3.2022,  4.0790,  3.5185,  0.7825, -0.9390, -1.3577, -0.6203, -0.2183,
+         -0.0698,  0.0628,  0.2743]], device='cuda:0')
+2021-10-21 17:20:42,148 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 17:20:50,471 INFO 48000Saved new best weights with: nDCG@10: 0.3342850790599777
+2021-10-21 17:20:50,473 INFO 48000-KNRM: linear weight: tensor([[ 3.3115,  4.4422,  3.8022,  0.7447, -1.1046, -1.5388, -0.7180, -0.2513,
+         -0.0831,  0.0640,  0.3025]], device='cuda:0')

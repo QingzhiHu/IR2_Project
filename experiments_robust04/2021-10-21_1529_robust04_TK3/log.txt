@@ -1,0 +1,114 @@
+2021-10-21 15:29:37,902 INFO Running: ['.\\matchmaker\\train.py', '--run-name', 'robust04_TK3', '--config-file', '.\\config\\train\\defaults_TK3.yaml', '.\\config\\train\\robust04.yaml']
+2021-10-21 15:29:37,918 INFO Torch seed: 208973249 
+2021-10-21 15:29:53,300 INFO Model TK total parameters: 191932923
+2021-10-21 15:29:53,301 INFO Network: NeuralIR_Encoder(
+  (word_embeddings): BasicTextFieldEmbedder(
+    (token_embedder_tokens): Embedding()
+  )
+  (neural_ir_model): ECAI20_TK(
+    (contextualizer): TransformerEncoder(
+      (layers): ModuleList(
+        (0): TransformerEncoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=100, out_features=100, bias=True)
+          )
+          (linear1): Linear(in_features=100, out_features=100, bias=True)
+          (dropout): Dropout(p=0, inplace=False)
+          (linear2): Linear(in_features=100, out_features=100, bias=True)
+          (norm1): LayerNorm((100,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((100,), eps=1e-05, elementwise_affine=True)
+          (dropout1): Dropout(p=0, inplace=False)
+          (dropout2): Dropout(p=0, inplace=False)
+        )
+        (1): TransformerEncoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=100, out_features=100, bias=True)
+          )
+          (linear1): Linear(in_features=100, out_features=100, bias=True)
+          (dropout): Dropout(p=0, inplace=False)
+          (linear2): Linear(in_features=100, out_features=100, bias=True)
+          (norm1): LayerNorm((100,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((100,), eps=1e-05, elementwise_affine=True)
+          (dropout1): Dropout(p=0, inplace=False)
+          (dropout2): Dropout(p=0, inplace=False)
+        )
+        (2): TransformerEncoderLayer(
+          (self_attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=100, out_features=100, bias=True)
+          )
+          (linear1): Linear(in_features=100, out_features=100, bias=True)
+          (dropout): Dropout(p=0, inplace=False)
+          (linear2): Linear(in_features=100, out_features=100, bias=True)
+          (norm1): LayerNorm((100,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((100,), eps=1e-05, elementwise_affine=True)
+          (dropout1): Dropout(p=0, inplace=False)
+          (dropout2): Dropout(p=0, inplace=False)
+        )
+      )
+    )
+    (cosine_module): CosineMatrixAttention()
+    (kernel_bin_weights): Linear(in_features=11, out_features=1, bias=False)
+  )
+)
+2021-10-21 15:29:53,302 INFO we_params: word_embeddings.token_embedder_tokens.weight
+2021-10-21 15:29:53,302 INFO params_group1: neural_ir_model.kernel_alpha_scaler
+2021-10-21 15:29:53,302 INFO params_group1: neural_ir_model.kernel_bin_weights.weight
+2021-10-21 15:29:54,873 INFO [Epoch 0] --- Start training 
+2021-10-21 15:32:14,668 INFO [eval_model] --- Start validation from loader
+2021-10-21 15:37:15,765 INFO 4000Saved new best weights with: nDCG@10: 0.3566455434804245
+2021-10-21 15:37:15,768 INFO 4000-TK: kernel_bin_weights: tensor([[ 0.0626,  0.0969,  0.1141,  0.1020,  0.0051, -0.0158, -0.0042,  0.0029,
+         -0.0011,  0.0026,  0.0051]], device='cuda:0') kernel_alpha_scaler: tensor([[[1.1653, 1.1971, 1.1369, 1.0363, 1.0000, 0.9996, 1.0001, 0.9991,
+          0.9961, 0.9939, 0.9928]]], device='cuda:0') mixer: tensor([0.5113], device='cuda:0')
+2021-10-21 15:38:51,994 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 15:39:51,542 INFO 8000Saved new best weights with: nDCG@10: 0.3629739745156333
+2021-10-21 15:39:51,545 INFO 8000-TK: kernel_bin_weights: tensor([[ 0.0809,  0.1138,  0.1355,  0.1095, -0.0075, -0.0255, -0.0056,  0.0015,
+         -0.0027,  0.0045,  0.0169]], device='cuda:0') kernel_alpha_scaler: tensor([[[1.1557, 1.2294, 1.1741, 1.0509, 1.0000, 0.9995, 1.0002, 1.0050,
+          0.9871, 0.9836, 1.0017]]], device='cuda:0') mixer: tensor([0.5149], device='cuda:0')
+2021-10-21 15:41:29,129 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 15:42:29,572 INFO 12000Saved new best weights with: nDCG@10: 0.3715597089751232
+2021-10-21 15:42:29,575 INFO 12000-TK: kernel_bin_weights: tensor([[ 0.0922,  0.1161,  0.1387,  0.1028, -0.0192, -0.0297, -0.0045,  0.0034,
+         -0.0033,  0.0024,  0.0086]], device='cuda:0') kernel_alpha_scaler: tensor([[[1.1266, 1.2519, 1.2049, 1.0676, 0.9986, 1.0000, 1.0001, 0.9860,
+          0.9699, 0.9702, 0.9964]]], device='cuda:0') mixer: tensor([0.5164], device='cuda:0')
+2021-10-21 15:44:05,826 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 15:45:05,528 INFO 16000Saved new best weights with: nDCG@10: 0.37678401565663483
+2021-10-21 15:45:05,531 INFO 16000-TK: kernel_bin_weights: tensor([[ 0.1000,  0.1176,  0.1420,  0.1018, -0.0268, -0.0288,  0.0011,  0.0086,
+         -0.0035,  0.0020,  0.0110]], device='cuda:0') kernel_alpha_scaler: tensor([[[1.0962, 1.2855, 1.2280, 1.0726, 0.9969, 0.9993, 1.0001, 0.9873,
+          0.9570, 0.9624, 0.9911]]], device='cuda:0') mixer: tensor([0.5172], device='cuda:0')
+2021-10-21 15:46:42,108 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 15:47:43,100 INFO 20000Saved new best weights with: nDCG@10: 0.3809624787232462
+2021-10-21 15:47:43,103 INFO 20000-TK: kernel_bin_weights: tensor([[ 0.1050,  0.1179,  0.1469,  0.1004, -0.0391, -0.0345, -0.0010,  0.0079,
+         -0.0049,  0.0044,  0.0116]], device='cuda:0') kernel_alpha_scaler: tensor([[[1.0730, 1.3117, 1.2536, 1.0807, 0.9968, 0.9995, 1.0002, 0.9839,
+          0.9580, 0.9560, 0.9904]]], device='cuda:0') mixer: tensor([0.5174], device='cuda:0')
+2021-10-21 15:49:20,669 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 15:50:17,318 INFO 24000-TK: kernel_bin_weights: tensor([[ 0.1124,  0.1228,  0.1538,  0.0988, -0.0481, -0.0361, -0.0028,  0.0055,
+         -0.0060,  0.0019,  0.0037]], device='cuda:0') kernel_alpha_scaler: tensor([[[1.0561, 1.3370, 1.2838, 1.0849, 0.9963, 1.0001, 1.0002, 0.9793,
+          0.9596, 0.9586, 0.9832]]], device='cuda:0') mixer: tensor([0.5177], device='cuda:0')
+2021-10-21 15:51:53,292 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 15:52:53,504 INFO 28000Saved new best weights with: nDCG@10: 0.38226894264690153
+2021-10-21 15:52:53,507 INFO 28000-TK: kernel_bin_weights: tensor([[ 0.1177,  0.1246,  0.1537,  0.0920, -0.0563, -0.0425, -0.0041,  0.0066,
+         -0.0053,  0.0017,  0.0040]], device='cuda:0') kernel_alpha_scaler: tensor([[[1.0474, 1.3568, 1.3090, 1.0936, 0.9977, 1.0008, 1.0001, 0.9792,
+          0.9541, 0.9613, 0.9811]]], device='cuda:0') mixer: tensor([0.5173], device='cuda:0')
+2021-10-21 15:54:29,964 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 15:55:29,509 INFO 32000Saved new best weights with: nDCG@10: 0.382698466839877
+2021-10-21 15:55:29,512 INFO 32000-TK: kernel_bin_weights: tensor([[ 0.1208,  0.1236,  0.1502,  0.0882, -0.0586, -0.0387, -0.0018,  0.0079,
+         -0.0072,  0.0052,  0.0033]], device='cuda:0') kernel_alpha_scaler: tensor([[[1.0400, 1.3807, 1.3371, 1.1017, 0.9969, 1.0008, 1.0002, 0.9813,
+          0.9476, 0.9534, 0.9746]]], device='cuda:0') mixer: tensor([0.5162], device='cuda:0')
+2021-10-21 15:57:06,027 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 15:58:06,754 INFO 36000Saved new best weights with: nDCG@10: 0.3873574388991356
+2021-10-21 15:58:06,757 INFO 36000-TK: kernel_bin_weights: tensor([[ 0.1280,  0.1294,  0.1554,  0.0900, -0.0577, -0.0364,  0.0015,  0.0113,
+         -0.0065,  0.0051,  0.0061]], device='cuda:0') kernel_alpha_scaler: tensor([[[1.0290, 1.4074, 1.3617, 1.1118, 0.9984, 1.0003, 1.0002, 0.9911,
+          0.9438, 0.9483, 0.9657]]], device='cuda:0') mixer: tensor([0.5161], device='cuda:0')
+2021-10-21 15:59:43,601 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 16:00:43,772 INFO 40000Saved new best weights with: nDCG@10: 0.3884370421177348
+2021-10-21 16:00:43,775 INFO 40000-TK: kernel_bin_weights: tensor([[ 0.1286,  0.1252,  0.1491,  0.0849, -0.0643, -0.0417, -0.0019,  0.0082,
+         -0.0096, -0.0022,  0.0030]], device='cuda:0') kernel_alpha_scaler: tensor([[[1.0166, 1.4264, 1.3838, 1.1133, 1.0004, 1.0002, 1.0002, 0.9940,
+          0.9467, 0.9344, 0.9563]]], device='cuda:0') mixer: tensor([0.5152], device='cuda:0')
+2021-10-21 16:02:20,589 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 16:03:20,670 INFO 44000Saved new best weights with: nDCG@10: 0.39065833488903595
+2021-10-21 16:03:20,674 INFO 44000-TK: kernel_bin_weights: tensor([[ 0.1320,  0.1249,  0.1442,  0.0802, -0.0662, -0.0410, -0.0010,  0.0103,
+         -0.0069,  0.0025,  0.0061]], device='cuda:0') kernel_alpha_scaler: tensor([[[0.9977, 1.4458, 1.3993, 1.1193, 1.0007, 1.0009, 1.0002, 0.9917,
+          0.9447, 0.9193, 0.9376]]], device='cuda:0') mixer: tensor([0.5141], device='cuda:0')
+2021-10-21 16:04:59,303 INFO [eval_model] --- Start validation with cache size:588
+2021-10-21 16:05:56,484 INFO 48000-TK: kernel_bin_weights: tensor([[ 0.1339,  0.1234,  0.1445,  0.0802, -0.0699, -0.0428, -0.0002,  0.0113,
+         -0.0091,  0.0009,  0.0033]], device='cuda:0') kernel_alpha_scaler: tensor([[[0.9806, 1.4662, 1.4302, 1.1248, 0.9993, 0.9999, 1.0002, 0.9897,
+          0.9458, 0.9137, 0.9378]]], device='cuda:0') mixer: tensor([0.5127], device='cuda:0')

@@ -1,0 +1,150 @@
+2021-10-17 23:24:30,115 INFO Running: ['matchmaker/train.py', '--run-name', 'experiment1', '--config-file', 'config/train/models/knrm.yaml', 'config/train/data/msmarco.yaml', 'config/train/defaults.yaml']
+2021-10-17 23:24:30,131 INFO Torch seed: 208973249 
+2021-10-17 23:24:37,993 INFO Model bert_cat total parameters: 66363649
+2021-10-17 23:24:37,994 INFO Network: BERT_Cat(
+  (bert_model): DistilBertModel(
+    (embeddings): Embeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (transformer): Transformer(
+      (layer): ModuleList(
+        (0): TransformerBlock(
+          (attention): MultiHeadSelfAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (q_lin): Linear(in_features=768, out_features=768, bias=True)
+            (k_lin): Linear(in_features=768, out_features=768, bias=True)
+            (v_lin): Linear(in_features=768, out_features=768, bias=True)
+            (out_lin): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (sa_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (ffn): FFN(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (lin1): Linear(in_features=768, out_features=3072, bias=True)
+            (lin2): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (output_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+        (1): TransformerBlock(
+          (attention): MultiHeadSelfAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (q_lin): Linear(in_features=768, out_features=768, bias=True)
+            (k_lin): Linear(in_features=768, out_features=768, bias=True)
+            (v_lin): Linear(in_features=768, out_features=768, bias=True)
+            (out_lin): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (sa_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (ffn): FFN(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (lin1): Linear(in_features=768, out_features=3072, bias=True)
+            (lin2): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (output_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+        (2): TransformerBlock(
+          (attention): MultiHeadSelfAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (q_lin): Linear(in_features=768, out_features=768, bias=True)
+            (k_lin): Linear(in_features=768, out_features=768, bias=True)
+            (v_lin): Linear(in_features=768, out_features=768, bias=True)
+            (out_lin): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (sa_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (ffn): FFN(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (lin1): Linear(in_features=768, out_features=3072, bias=True)
+            (lin2): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (output_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+        (3): TransformerBlock(
+          (attention): MultiHeadSelfAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (q_lin): Linear(in_features=768, out_features=768, bias=True)
+            (k_lin): Linear(in_features=768, out_features=768, bias=True)
+            (v_lin): Linear(in_features=768, out_features=768, bias=True)
+            (out_lin): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (sa_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (ffn): FFN(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (lin1): Linear(in_features=768, out_features=3072, bias=True)
+            (lin2): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (output_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+        (4): TransformerBlock(
+          (attention): MultiHeadSelfAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (q_lin): Linear(in_features=768, out_features=768, bias=True)
+            (k_lin): Linear(in_features=768, out_features=768, bias=True)
+            (v_lin): Linear(in_features=768, out_features=768, bias=True)
+            (out_lin): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (sa_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (ffn): FFN(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (lin1): Linear(in_features=768, out_features=3072, bias=True)
+            (lin2): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (output_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+        (5): TransformerBlock(
+          (attention): MultiHeadSelfAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (q_lin): Linear(in_features=768, out_features=768, bias=True)
+            (k_lin): Linear(in_features=768, out_features=768, bias=True)
+            (v_lin): Linear(in_features=768, out_features=768, bias=True)
+            (out_lin): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (sa_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (ffn): FFN(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (lin1): Linear(in_features=768, out_features=3072, bias=True)
+            (lin2): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (output_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+      )
+    )
+  )
+  (_classification_layer): Linear(in_features=768, out_features=1, bias=True)
+)
+2021-10-17 23:24:41,776 INFO [Epoch 0] --- Start training 
+2021-10-17 23:33:18,805 INFO [eval_model] --- Start validation from loader
+2021-10-18 00:30:28,807 INFO 4000Saved new best weights with: nDCG@10: 0.34275208306968885
+2021-10-18 00:30:28,808 INFO 4000-BERT_cat: / 
+2021-10-18 00:38:14,256 INFO [eval_model] --- Start validation with cache size:12554
+2021-10-18 01:53:00,093 INFO 8000Saved new best weights with: nDCG@10: 0.35877873478117533
+2021-10-18 01:53:00,094 INFO 8000-BERT_cat: / 
+2021-10-18 02:00:51,151 INFO [eval_model] --- Start validation with cache size:12554
+2021-10-18 03:01:23,571 INFO 12000Saved new best weights with: nDCG@10: 0.3699780323638258
+2021-10-18 03:01:23,571 INFO 12000-BERT_cat: / 
+2021-10-18 03:09:09,462 INFO [eval_model] --- Start validation with cache size:12554
+2021-10-18 04:09:59,277 INFO 16000Saved new best weights with: nDCG@10: 0.3797113811762311
+2021-10-18 04:09:59,277 INFO 16000-BERT_cat: / 
+2021-10-18 04:17:37,627 INFO [eval_model] --- Start validation with cache size:12554
+2021-10-18 05:16:28,282 INFO 20000-BERT_cat: / 
+2021-10-18 05:24:11,197 INFO [eval_model] --- Start validation with cache size:12554
+2021-10-18 06:23:14,741 INFO 24000Saved new best weights with: nDCG@10: 0.38832764114958773
+2021-10-18 06:23:14,741 INFO 24000-BERT_cat: / 
+2021-10-18 06:30:47,207 INFO [eval_model] --- Start validation with cache size:12554
+2021-10-18 07:29:33,327 INFO 28000-BERT_cat: / 
+2021-10-18 07:37:12,909 INFO [eval_model] --- Start validation with cache size:12554
+2021-10-18 08:35:56,840 INFO 32000-BERT_cat: / 
+2021-10-18 08:43:36,072 INFO [eval_model] --- Start validation with cache size:12554
+2021-10-18 09:42:37,181 INFO 36000Saved new best weights with: nDCG@10: 0.3942022166995462
+2021-10-18 09:42:37,181 INFO 36000-BERT_cat: / 
+2021-10-18 09:50:16,210 INFO [eval_model] --- Start validation with cache size:12554
+2021-10-18 10:49:02,120 INFO 40000-BERT_cat: / 
+2021-10-18 10:56:41,029 INFO [eval_model] --- Start validation with cache size:12554
+2021-10-18 11:55:29,460 INFO 44000-BERT_cat: / 
+2021-10-18 12:03:11,219 INFO [eval_model] --- Start validation with cache size:12554
+2021-10-18 12:23:09,919 INFO -----------------------------------------------------------------------------------------
+2021-10-18 12:23:09,919 ERROR [eval_model] Got exception: 
+Traceback (most recent call last):
+  File "C:\Users\qhuca\Downloads\IR2_final\IR2_Project\matchmaker\eval.py", line 161, in evaluate_model
+    output = output.cpu()  # get the output back to the cpu - in one piece
+KeyboardInterrupt

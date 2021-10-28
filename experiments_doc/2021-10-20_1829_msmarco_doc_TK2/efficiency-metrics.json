@@ -1,0 +1,137 @@
+{
+  "gpu_model": "NVIDIA GeForce RTX 3070",
+  "gpu_count": 1,
+  "startup": {
+    "type": "single_point",
+    "time": 13.6698819
+  },
+  "train": {
+    "len": 2,
+    "measure": "seconds",
+    "sum_times_gpus": 255.02044500000002,
+    "sum_gpu_hours": 0.0708390125,
+    "sum": 255.02044500000002,
+    "type": "list_iterations",
+    "mean_perit": 515.526998809159,
+    "stdev_perit": 118.44404411946692,
+    "median_perit": 515.526998809159,
+    "median_latency": 127.51022250000001,
+    "95th_latency": 146.15401788,
+    "observations": 2
+  },
+  "validation": {
+    "len": 2,
+    "measure": "seconds",
+    "sum_times_gpus": 49.76922320000003,
+    "sum_gpu_hours": 0.01382478422222223,
+    "sum": 49.76922320000003,
+    "type": "list_iterations",
+    "mean_perit": 4184.14665270975,
+    "stdev_perit": 5574.9121277045815,
+    "median_perit": 4184.14665270975,
+    "median_latency": 24.884611600000014,
+    "95th_latency": 45.98495419,
+    "observations": 2
+  },
+  "train_gpu_mem": {
+    "sum": 2.305078272,
+    "measure": "GB"
+  },
+  "train_gpu_mem_max": {
+    "sum": 2.663559168,
+    "measure": "GB"
+  },
+  "train_gpu_cache": {
+    "sum": 2.707423232,
+    "measure": "GB"
+  },
+  "train_gpu_cache_max": {
+    "sum": 2.707423232,
+    "measure": "GB"
+  },
+  "eval_gpu_mem": {
+    "sum": 2.305078272,
+    "measure": "GB"
+  },
+  "eval_gpu_mem_max": {
+    "sum": 4.25108992,
+    "measure": "GB"
+  },
+  "eval_gpu_cache": {
+    "sum": 5.125439488,
+    "measure": "GB"
+  },
+  "eval_gpu_cache_max": {
+    "sum": 5.125439488,
+    "measure": "GB"
+  },
+  "total_gpu_hours": 0.08466379672222224
+}{
+  "gpu_model": "NVIDIA GeForce RTX 3070",
+  "gpu_count": 1,
+  "startup": {
+    "type": "single_point",
+    "time": 13.6698819
+  },
+  "train": {
+    "len": 24,
+    "measure": "seconds",
+    "sum_times_gpus": 2527.5291455,
+    "sum_gpu_hours": 0.7020914293055556,
+    "sum": 2527.5291455,
+    "type": "list_iterations",
+    "mean_perit": 488.40711630039533,
+    "stdev_perit": 215.24495948624556,
+    "median_perit": 592.8860599223012,
+    "median_latency": 103.72745930000008,
+    "95th_latency": 144.10350369499997,
+    "observations": 24
+  },
+  "validation": {
+    "len": 20,
+    "measure": "seconds",
+    "sum_times_gpus": 76.35278570000068,
+    "sum_gpu_hours": 0.02120910713888908,
+    "sum": 76.35278570000068,
+    "type": "list_iterations",
+    "mean_perit": 7561.967172127764,
+    "stdev_perit": 1753.461619728941,
+    "median_perit": 8104.894237736124,
+    "median_latency": 1.4435721999999487,
+    "95th_latency": 4.020122849999774,
+    "observations": 20
+  },
+  "train_gpu_mem": {
+    "sum": 2.3050774528,
+    "measure": "GB"
+  },
+  "train_gpu_mem_max": {
+    "sum": 2.663559168,
+    "measure": "GB"
+  },
+  "train_gpu_cache": {
+    "sum": 2.704277504,
+    "measure": "GB"
+  },
+  "train_gpu_cache_max": {
+    "sum": 2.704277504,
+    "measure": "GB"
+  },
+  "eval_gpu_mem": {
+    "sum": 2.305020732952381,
+    "measure": "GB"
+  },
+  "eval_gpu_mem_max": {
+    "sum": 4.251527021714286,
+    "measure": "GB"
+  },
+  "eval_gpu_cache": {
+    "sum": 5.1274367756190475,
+    "measure": "GB"
+  },
+  "eval_gpu_cache_max": {
+    "sum": 5.1274367756190475,
+    "measure": "GB"
+  },
+  "total_gpu_hours": 0.7233005364444447
+}
