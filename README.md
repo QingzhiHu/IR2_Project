@@ -67,7 +67,7 @@ In ./config/train/data_config and ./config/train/models_config you can change th
 ## Hypaparameters & Datasets
 
 ![image info](./documentation/Hyperparameters.PNG)
-![image info](./documentation/dataset.PNG)
+
 
 # Data Preprocessing
 
