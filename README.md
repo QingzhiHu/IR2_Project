@@ -1,6 +1,6 @@
 # Reproducing TK paper
 
-This repository is made for reproducing the results of the paper *Interpretable & Time-Budget-Constrained Contextualization for Re-Ranking* for the master course Information Retrieval 2 at University of Amsterdam. The original code from the authors is available here: https://github.com/sebastian-hofstaetter/matchmaker. We have used the models implemented in their matchmaker folder, and for all the other folders in this repository is supplemented by ourselves. 
+This repository is made for reproducing the results of the paper *Interpretable & Time-Budget-Constrained Contextualization for Re-Ranking* for the master course Information Retrieval 2 at University of Amsterdam. The original code from the authors is available here: https://github.com/sebastian-hofstaetter/matchmaker. We have used the models implemented in their matchmaker folder, and we modified some files (details below) and added script in matchmaker folder as well. All the other folders in this repository is supplemented by ourselves. 
 
 The report is concluded in this repository: ./report.pdf
 
