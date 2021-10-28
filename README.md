@@ -120,7 +120,15 @@ Quantitative analysis modified files:
 Qualitative analysis modified files:
 
 
+# Contact
 
+If you have any question, please feel free to contact us:
+
+Hidde Lekanne gezegd Deprez: hidde.lekannegezegddeprez@student.uva.nl
+
+Noud Corten: noud.corten@student.uva.nl
+
+Qingzhi Hu: qingzhi.hu@student.uva.nl
 
 
 
