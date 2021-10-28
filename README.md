@@ -71,7 +71,7 @@ In ./config/train/data_config and ./config/train/models_config you can change th
 
 # Data Preprocessing
 
-./help_data:this folder is used for preprocessing the data
+./help_data: this folder is used for preprocessing the data
 
 ## MSMARCO-Passage
 
