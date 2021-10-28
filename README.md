@@ -64,9 +64,11 @@ Download glove300 data from https://www.kaggle.com/yutanakamura/glove42b300dtxt/
 
 In ./config/train/data_config and ./config/train/models_config you can change the configurations or add configurations for the datasets and the models. Note that different models require different parameters to run, here we provide a summary of the information for models and datasets in our report.
 
-## Hypaparameters & Datasets
+## Datasets
+![image info](./documentation/dataset.PNG)
 
-![image info](./documentation/Hyperparameters.PNG)
+## Hypaparameters
+![image info](./documentation/hyperparameters.PNG)
 
 
 # Data Preprocessing
