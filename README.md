@@ -109,12 +109,41 @@ Then use ./help_data/robust04/Robust04.ipynb for merging df1.csv (qid, query), d
 
 # Analysis
 
-Quantitative analysis modified files: 
-./matchmaker/eval.py
-./matchmaker/models/evai_20_tk.py
-./matchmaker/modules/neuralIR_encoder.py
+## Quantitative analysis 
+### Modified files
+* ./matchmaker/eval.py
+* ./matchmaker/models/evai_20_tk.py
+* ./matchmaker/modules/neuralIR_encoder.py
 
-Qualitative analysis modified files:
+## Qualitative analysis 
+### Added files:
+* ./matchmaker/qualitative.py
+
+### Running experiment
+For qualitative results we want model ranks and a simple test file. To acquire this run:
+```
+python ./matchmaker/qualitative.py --path [experiments_folder] --query [query_id] --doc [doc_id]
+```
+This will lead to the following results:
+1. Create a folder called ```./qualitative```
+2. Save the ranking resuls for the defined query and document to ```./qualitative/ranking-scores.tsv``` 
+3. create a file called containing the top1000 documents for the specified query in ```./qualitative/top1000-query[ID].dev```
+
+### Getting results
+For acquiring the qualitative results you must change ```./training_data/test/top1000.eval``` to the file that was created in Step 3 of "Running Experiment".
+This can be done by simply changing the name of 'top1000-query[ID].dev' to 'top1000.eval' and replacing the file in the ```./training_data/test``` folder.
+
+To then find the intermediate results one hase to dive deep into the code of the model and log the intermediate kernel results.
+For example, to acquire the intermediate kernel scores as presented in our paper you must log the variable ```per_kernel``` which can be found here:
+* ```./matchmaker/models/conv-knrm.py``` on line 171
+* ```./matchmaker/models/published/ecai20_tk.py``` on line 123
+
+After defining what to log, a pre-trained model (e.g. TK3) can be tested using the following command:
+```
+python ./matchmaker/train.py --continue-folder ./experiments_lisa/2021-10-25_1534_msmarco_passage_TK3 --config-file ./config/train/defaults_TK3.yaml ./config/train/msmarco.yaml
+```
+
+
 
 
 # Contact
