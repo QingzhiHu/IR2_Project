@@ -3,7 +3,7 @@ from typing import Dict, Iterator, List
 import torch
 import torch.nn as nn
 
-from allennlp.modules.matrix_attention.cosine_matrix_attention import CosineMatrixAttention                          
+from allennlp.modules.matrix_attention.cosine_matrix_attention import CosineMatrixAttention
 import math
 
 class ECAI20_TK(nn.Module):
@@ -21,7 +21,7 @@ class ECAI20_TK(nn.Module):
 
     @staticmethod
     def from_config(config,word_embeddings_out_dim):
-        return ECAI20_TK(word_embeddings_out_dim, 
+        return ECAI20_TK(word_embeddings_out_dim,
                      kernels_mu =           config["tk_kernels_mu"],
                      kernels_sigma =        config["tk_kernels_sigma"],
                      att_heads =            config["tk_att_heads"],
@@ -42,7 +42,7 @@ class ECAI20_TK(nn.Module):
                  use_diff_posencoding:bool,
                  mix_hybrid_context:bool):
 
-        super(ECAI20_TK, self).__init__()      
+        super(ECAI20_TK, self).__init__()
 
         #
         # Contextualization (pos. encoding + transformers)
@@ -80,12 +80,12 @@ class ECAI20_TK(nn.Module):
 
         self.kernel_bin_weights = nn.Linear(n_kernels, 1, bias=False)
         torch.nn.init.uniform_(self.kernel_bin_weights.weight, -0.014, 0.014) # inits taken from matchzoo
-        
+
         # First introduced in TK-Sparse (but not for sparsity)
         self.kernel_alpha_scaler = nn.Parameter(torch.full([1,1,n_kernels], 1, dtype=torch.float32, requires_grad=True))
 
     def forward(self, query_embeddings: torch.Tensor, document_embeddings: torch.Tensor,
-                query_mask: torch.Tensor, document_mask: torch.Tensor, 
+                query_mask: torch.Tensor, document_mask: torch.Tensor,
                 output_secondary_output: bool = False) -> torch.Tensor:
 
         #
@@ -118,9 +118,9 @@ class ECAI20_TK(nn.Module):
         # -------------------------------------------------------
 
         per_kernel_query = torch.sum(kernel_results_masked, 2)
-        log_per_kernel_query = torch.log(torch.clamp(per_kernel_query * self.kernel_alpha_scaler, min=1e-10)) 
+        log_per_kernel_query = torch.log(torch.clamp(per_kernel_query * self.kernel_alpha_scaler, min=1e-10))
         log_per_kernel_query_masked = log_per_kernel_query * query_mask.unsqueeze(-1) # make sure we mask out padding values
-        per_kernel = torch.sum(log_per_kernel_query_masked, 1) 
+        per_kernel = torch.sum(log_per_kernel_query_masked, 1)
         score = self.kernel_bin_weights(per_kernel).squeeze(1)
 
         if output_secondary_output:
@@ -131,16 +131,37 @@ class ECAI20_TK(nn.Module):
             return score
 
     def forward_representation(self, sequence_embeddings: torch.Tensor, sequence_mask: torch.Tensor,positional_features=None) -> torch.Tensor:
-
+        # a adfadsf
         if positional_features is None:
             positional_features = self.positional_features_d[:,:sequence_embeddings.shape[1],:]
 
         sequence_embeddings_context = self.contextualizer((sequence_embeddings + positional_features).transpose(1,0),src_key_padding_mask=~sequence_mask.bool()).transpose(1,0)
-        
+
         if self.mix_hybrid_context:
             return (self.mixer * sequence_embeddings + (1 - self.mixer) * sequence_embeddings_context)
         else:
             return sequence_embeddings_context
+
+    # dfd
+    def forward_embeddings_only(self, query_embeddings: torch.Tensor, document_embeddings: torch.Tensor,
+                query_mask: torch.Tensor, document_mask: torch.Tensor,
+                output_secondary_output: bool = False) -> tuple:
+        all_query_embeddings = self.all_embeddings_representation(query_embeddings, query_mask,self.positional_features_q[:,:query_embeddings.shape[1],:])
+        all_document_embeddings = self.all_embeddings_representation(document_embeddings, document_mask,self.positional_features_d[:,:document_embeddings.shape[1],:])
+        return all_query_embeddings, all_document_embeddings
+
+    def all_embeddings_representation(self, sequence_embeddings: torch.Tensor, sequence_mask: torch.Tensor,positional_features=None) -> list:
+        embeddings = []
+        embeddings.append(sequence_embeddings.clone().detach().cpu())
+
+        if positional_features is None:
+            positional_features = self.positional_features_d[:,:sequence_embeddings.shape[1],:]
+
+        sequence_embeddings_context = (sequence_embeddings + positional_features)
+        for layer in self.contextualizer.layers:
+            sequence_embeddings_context = layer(sequence_embeddings_context.transpose(1,0) ,src_key_padding_mask=~sequence_mask.bool()).transpose(1,0)
+            embeddings.append(sequence_embeddings_context.clone().detach().cpu())
+        return embeddings
 
     def get_positional_features(self,dimensions,
                                 max_length,
@@ -201,7 +222,7 @@ class ECAI20_TK(nn.Module):
         if device > -1:
             return torch.cuda.LongTensor(size, device=device).fill_(1).cumsum(0) - 1
         else:
-            return torch.arange(0, size, dtype=torch.long)  
+            return torch.arange(0, size, dtype=torch.long)
 
     def get_param_stats(self):
         return "TK: kernel_bin_weights: "+str(self.kernel_bin_weights.weight.data) + " kernel_alpha_scaler: "+str(self.kernel_alpha_scaler.data) + " mixer: "+str(self.mixer.data)
