@@ -111,10 +111,11 @@ Then use ./help_data/robust04/Robust04.ipynb for merging df1.csv (qid, query), d
 
 ## Quantitative analysis 
 ### Modified files
-* ./matchmaker/eval.py
+* ./matchmaker/eval_quantitative.py
 * ./matchmaker/models/evai_20_tk.py
 * ./matchmaker/modules/neuralIR_encoder.py
 
+To run simply replace the import in train.py from eval to eval_quantitative and run as previous instructions, this can only be done for the TK model though. It will print the self-similarity per layer at evaluation time.
 ## Qualitative analysis 
 ### Added files:
 * ./matchmaker/qualitative.py
